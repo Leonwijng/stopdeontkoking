@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Background & Text */
+    --background: 0 0% 98%;    /* Off-white */
+    --foreground: 0 0% 20%;    /* Deep Charcoal */
+
+    /* Cards & Popovers */
+    --card: 0 0% 100%;          /* White card */
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    /* Primary / Secondary / Accent */
+    --primary: 14 100% 63%;     /* Energetic Orange */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 48 100% 57%;   /* Sunny Yellow */
+    --secondary-foreground: 0 0% 20%;
+    --accent: 14 100% 63%;      /* Accent same as primary for consistency */
+    --accent-foreground: 0 0% 100%;
+
+    /* Muted / Destructive */
+    --muted: 0 0% 90%;          /* Slightly darker off-white for subtle UI */
+    --muted-foreground: 0 0% 50%;
+    --destructive: 0 84% 60%;   /* Red for destructive actions */
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI */
+    --border: 0 0% 85%;
+    --input: 0 0% 95%;
+    --ring: 14 100% 63%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark Background */
+    --background: 0 0% 12%;     /* Dark gray background */
+    --foreground: 0 0% 98%;     /* Light off-white text */
+
+    /* Cards & Popovers */
+    --card: 0 0% 20%;           
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 20%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary / Secondary / Accent remain vibrant */
+    --primary: 14 100% 63%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 48 100% 57%;
+    --secondary-foreground: 0 0% 20%;
+    --accent: 14 100% 63%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Muted / Destructive */
+    --muted: 0 0% 35%;
+    --muted-foreground: 0 0% 80%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI */
+    --border: 0 0% 35%;
+    --input: 0 0% 25%;
+    --ring: 14 100% 63%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Custom utility classes */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Subtle ambient radial gradients for atmospheric backgrounds */
+.bg-ambient {
+  background-image:
+    radial-gradient(800px 500px at 85% 0%, hsl(var(--primary) / 0.10), transparent 60%),
+    radial-gradient(700px 450px at 10% 10%, hsl(var(--accent) / 0.08), transparent 55%);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus visible */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}

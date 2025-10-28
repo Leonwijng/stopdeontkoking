@@ -1,0 +1,10 @@
+{
+  "name": "stopdeontkoking",
+  "type": "javascript",
+  "account_id": "b045194733d9d77e2953dd13b817f23a",
+  "workers_dev": true,
+  "route": "",
+  "zone_id": "",
+  "compatibility_date": "2025-10-28",
+  "main": "src/app/page.tsx"
+}
